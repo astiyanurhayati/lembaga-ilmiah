@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lembaga Ilmiah UKM UNEJ</title>
+    <meta name="description" content="Mengembangkan Inovasi, Ilmu, dan Kreativitas Mahasiswa." />
+    <meta name="author" content="UKM UNEJ – Lembaga Ilmiah" />
+    <link rel="canonical" href="/" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Meta tags for social sharing -->
+    <meta property="og:title" content="Lembaga Ilmiah UKM UNEJ" />
+    <meta property="og:description" content="Mengembangkan Inovasi, Ilmu, dan Kreativitas Mahasiswa." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lembaga Ilmiah UKM UNEJ",
+        "url": "/",
+        "logo": "/favicon.ico",
+        "sameAs": [
+          "https://instagram.com/ukm_li_unej",
+          "https://twitter.com/ukm_li_unej"
+        ]
+      }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: ["class"],
+            theme: {
+                container: {
+                    center: true,
+                    padding: '2rem',
+                    screens: {
+                        '2xl': '1400px'
+                    }
+                },
+                extend: {
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))'
+                        }
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 4px)',
+                        sm: 'calc(var(--radius) - 8px)'
+                    },
+                    fontFamily: {
+                        jakarta: ["Plus Jakarta Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+                    },
+                    keyframes: {
+                        'accordion-down': {
+                            from: { height: '0' },
+                            to: { height: 'var(--radix-accordion-content-height)' }
+                        },
+                        'accordion-up': {
+                            from: { height: 'var(--radix-accordion-content-height)' },
+                            to: { height: '0' }
+                        },
+                        floaty: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-6px)' }
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        'fade-out': {
+                            '0%': { opacity: '1', transform: 'translateY(0)' },
+                            '100%': { opacity: '0', transform: 'translateY(10px)' }
+                        },
+                        'scale-in': {
+                            '0%': { transform: 'scale(0.98)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
+                        },
+                        'scale-out': {
+                            from: { transform: 'scale(1)', opacity: '1' },
+                            to: { transform: 'scale(0.98)', opacity: '0' }
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' }
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                    },
+                    animation: {
+                        'accordion-down': 'accordion-down 0.2s ease-out',
+                        'accordion-up': 'accordion-up 0.2s ease-out',
+                        floaty: 'floaty 6s ease-in-out infinite',
+                        'fade-in': 'fade-in 0.4s ease-out both',
+                        'fade-out': 'fade-out 0.3s ease-in both',
+                        'scale-in': 'scale-in 0.25s ease-out both',
+                        'scale-out': 'scale-out 0.2s ease-in both',
+                        'slide-in-right': 'slide-in-right 0.4s ease-out both',
+                        'slide-out-right': 'slide-out-right 0.3s ease-in both',
+                        enter: 'fade-in 0.4s ease-out, scale-in 0.25s ease-out',
+                        exit: 'fade-out 0.3s ease-in, scale-out 0.2s ease-in',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+    <div class="min-h-screen">
+        <!-- Navigation -->
+        <header class="sticky top-0 z-50 glass-morphism backdrop-blur-xl border-b border-white/20">
+            <nav class="container mx-auto flex h-14 sm:h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+                <a href="#hero" class="font-bold tracking-tight text-base sm:text-lg">LI UKM UNEJ</a>
+                <div class="hidden md:flex items-center gap-4 lg:gap-6">
+                    <a href="#hero" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Beranda</a>
+                    <a href="#produk" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Produk</a>
+                    <a href="#perpustakaan" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Perpustakaan</a>
+                    <a href="#agenda" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Agenda</a>
+                    <a href="#galeri" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Galeri</a>
+                    <a href="#tentang" class="text-sm text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 lg:px-3 py-2 story-link transition-colors">Tentang</a>
+                </div>
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="#agenda" class="premium-button border-0 text-white px-3 py-2 sm:px-6 sm:py-2 text-sm rounded-xl inline-flex items-center justify-center" aria-label="Lihat Agenda Terdekat">
+                        <span class="hidden sm:inline">Lihat Agenda Terdekat</span>
+                        <span class="sm:hidden">Agenda</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="relative">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-premium relative min-h-screen flex items-center py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
+                        <!-- Left Content -->
+                        <div class="space-y-8 sm:space-y-10 text-center lg:text-left">
+                            <div class="animate-slide-up">
+                                <div class="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 rounded-full glass-morphism text-xs sm:text-sm font-medium mb-6 sm:mb-8">
+                                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                    Universitas Jember
+                                </div>
+                                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight mb-4 sm:mb-6">
+                                    <span class="block">Lembaga</span>
+                                    <span class="block text-gradient">Ilmiah</span>
+                                    <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-muted-foreground mt-2 sm:mt-4">UKM UNEJ</span>
+                                </h1>
+                            </div>
+                            
+                            <div class="animate-slide-up-delayed space-y-4 sm:space-y-6">
+                                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                                    Mengembangkan <span class="text-foreground font-semibold">Inovasi</span>, 
+                                    <span class="text-foreground font-semibold"> Ilmu</span>, dan 
+                                    <span class="text-foreground font-semibold"> Kreativitas</span> Mahasiswa
+                                </p>
+                                <p class="text-base sm:text-lg text-muted-foreground/80 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                                    Komunitas riset dan karya ilmiah terdepan yang memfasilitasi mahasiswa untuk berkembang dalam dunia akademik dan penelitian.
+                                </p>
+                            </div>
+
+                            <div class="animate-slide-up-delayed-2 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
+                                <a href="#agenda" class="premium-button border-0 text-white px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg font-semibold rounded-2xl inline-flex items-center justify-center">Lihat Agenda Terdekat</a>
+                                <a href="#produk" class="px-8 py-6 sm:px-10 sm:py-7 text-base sm:text-lg border-2 hover:bg-muted/50 rounded-2xl inline-flex items-center justify-center border-border bg-background text-foreground">Jelajahi Produk</a>
+                            </div>
+
+                            <div class="animate-slide-up-delayed-2 flex gap-3 sm:gap-4 items-center text-xs sm:text-sm justify-center lg:justify-start">
+                                <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Profesional</span>
+                                <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Modern</span>
+                                <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Responsif</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Content -->
+                        <div class="relative mt-12 lg:mt-0 order-first lg:order-last">
+                            <!-- Main Image -->
+                            <div class="animate-float relative">
+                                <img
+                                    src="src/assets/hero-li-unej.jpg"
+                                    alt="Kegiatan Lembaga Ilmiah UKM UNEJ: mahasiswa berkolaborasi dalam riset"
+                                    class="w-full h-auto rounded-2xl sm:rounded-3xl shadow-[var(--shadow-premium)]"
+                                />
+                            </div>
+
+                            <!-- Floating Cards - Hidden on mobile for cleaner look -->
+                            <div class="hidden lg:block absolute -top-8 -left-8 animate-float-delayed">
+                                <div class="floating-card rounded-2xl p-6 w-48 sparkle">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                                            <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <div class="text-sm font-semibold">Publikasi</div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="text-2xl font-black text-primary">250+</div>
+                                        <div class="text-xs text-muted-foreground">Karya Ilmiah</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hidden lg:block absolute -bottom-6 -right-6 animate-float">
+                                <div class="floating-card rounded-2xl p-6 w-52">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                                            <i data-lucide="calendar-days" class="w-5 h-5 text-white"></i>
+                                        </div>
+                                        <div class="text-sm font-semibold">Event Terdekat</div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="text-sm font-medium">Workshop Riset</div>
+                                        <div class="text-xs text-muted-foreground">12 September 2025</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hidden lg:block absolute top-1/2 -left-12 animate-float-delayed">
+                                <div class="floating-card rounded-2xl p-4 w-40">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                                            <i data-lucide="archive" class="w-4 h-4 text-white"></i>
+                                        </div>
+                                        <div class="text-xs font-semibold">Achievement</div>
+                                    </div>
+                                    <div class="space-y-1">
+                                        <div class="text-xl font-black text-primary">15+</div>
+                                        <div class="text-xs text-muted-foreground">Penghargaan</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Elements -->
+                            <div class="absolute -top-4 right-1/4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-full blur-xl animate-pulse"></div>
+                            <div class="absolute bottom-1/4 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500/10 to-blue-500/5 rounded-full blur-lg animate-pulse" style="animation-delay: 1s;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Stats -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-20 sm:mt-24 lg:mt-32 animate-slide-up-delayed-2">
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-1 sm:mb-2">500+</div>
+                            <div class="text-xs sm:text-sm text-muted-foreground">Anggota Aktif</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-1 sm:mb-2">50+</div>
+                            <div class="text-xs sm:text-sm text-muted-foreground">Event per Tahun</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-1 sm:mb-2">25+</div>
+                            <div class="text-xs sm:text-sm text-muted-foreground">Kompetisi Dimenangkan</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl lg:text-4xl font-black text-primary mb-1 sm:mb-2">10+</div>
+                            <div class="text-xs sm:text-sm text-muted-foreground">Tahun Berpengalaman</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Produk Section -->
+            <section id="produk" class="section-background py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+                                <i data-lucide="archive" class="text-white w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Produk LI</h2>
+                        </div>
+                        <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Inovasi dan karya terbaik dari komunitas Lembaga Ilmiah
+                        </p>
+                    </div>
+                    <div class="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3" id="products-grid">
+                        <!-- Products will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Perpustakaan Section -->
+            <section id="perpustakaan" class="py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                                <i data-lucide="book-open" class="text-white w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Perpustakaan</h2>
+                        </div>
+                        <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8">
+                            Koleksi lengkap buku dan artikel ilmiah untuk referensi akademik
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+                            <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Kategori: Semua</span>
+                            <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Tahun: Semua</span>
+                            <span class="inline-block text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2 rounded-full glass-morphism text-foreground border-0 font-medium">Tipe: PDF</span>
+                        </div>
+                    </div>
+                    <div class="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" id="library-grid">
+                        <!-- Library items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agenda Section -->
+            <section id="agenda" class="section-background py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                                <i data-lucide="calendar-days" class="text-white w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Agenda Terdekat</h2>
+                        </div>
+                        <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Ikuti berbagai kegiatan menarik yang akan datang
+                        </p>
+                    </div>
+                    <div class="grid gap-4 sm:gap-6 max-w-4xl mx-auto" id="agenda-grid">
+                        <!-- Agenda items will be dynamically inserted here -->
+                    </div>
+                    <div class="text-center mt-8 sm:mt-12">
+                        <a href="/agenda" class="premium-button border-0 text-white px-8 py-5 sm:px-10 sm:py-6 text-base sm:text-lg font-semibold rounded-2xl inline-flex items-center justify-center">Lihat Semua Agenda</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Galeri Section -->
+            <section id="galeri" class="py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                                <i data-lucide="image" class="text-white w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Galeri Dokumentasi</h2>
+                        </div>
+                        <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Momen berharga dari berbagai kegiatan dan pencapaian kami
+                        </p>
+                    </div>
+                    <div class="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="gallery-grid">
+                        <!-- Gallery items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tentang Section -->
+            <section id="tentang" class="section-background py-16 sm:py-20 lg:py-24">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12 sm:mb-16">
+                        <div class="flex items-center justify-center gap-3 mb-4 sm:mb-6">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                                <i data-lucide="info" class="text-white w-5 h-5 sm:w-6 sm:h-6"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Tentang LI</h2>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12 sm:gap-16 items-start max-w-6xl mx-auto">
+                        <article class="space-y-6 sm:space-y-8">
+                            <div class="glass-morphism rounded-2xl sm:rounded-3xl p-6 sm:p-8">
+                                <p class="text-base sm:text-lg text-foreground leading-relaxed mb-6 sm:mb-8">
+                                    Lembaga Ilmiah (LI) UKM UNEJ adalah komunitas riset mahasiswa yang berfokus pada pengembangan publikasi, kompetisi ilmiah, dan karya inovasi di lingkungan Universitas Jember.
+                                </p>
+                                
+                                <div class="space-y-5 sm:space-y-6">
+                                    <div>
+                                        <h3 class="font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-primary">Visi</h3>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-start gap-3 text-sm sm:text-base text-muted-foreground">
+                                                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                                                <span>Menjadi wadah unggul pengembangan budaya ilmiah mahasiswa.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3 class="font-bold text-lg sm:text-xl mb-3 sm:mb-4 text-primary">Misi</h3>
+                                        <ul class="space-y-2 sm:space-y-3">
+                                            <li class="flex items-start gap-3 text-sm sm:text-base text-muted-foreground">
+                                                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                                                <span>Mendorong riset dan penulisan ilmiah berkualitas.</span>
+                                            </li>
+                                            <li class="flex items-start gap-3 text-sm sm:text-base text-muted-foreground">
+                                                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                                                <span>Mengakselerasi kolaborasi lintas disiplin dan komunitas.</span>
+                                            </li>
+                                            <li class="flex items-start gap-3 text-sm sm:text-base text-muted-foreground">
+                                                <div class="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                                                <span>Menghasilkan karya inovasi yang berdampak.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <div class="glass-morphism rounded-2xl sm:rounded-3xl overflow-hidden">
+                            <table class="w-full text-sm sm:text-base">
+                                <thead class="bg-gradient-to-r from-primary/10 to-primary/5">
+                                    <tr>
+                                        <th class="text-left p-4 sm:p-6 font-bold text-primary">Jabatan</th>
+                                        <th class="text-left p-4 sm:p-6 font-bold text-primary">Nama</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border/10">
+                                    <tr class="hover:bg-muted/20 transition-colors">
+                                        <td class="p-4 sm:p-6 font-semibold">Ketua</td>
+                                        <td class="p-4 sm:p-6 text-muted-foreground">Syafrina Arsiyunita</td>
+                                    </tr>
+                                    <tr class="hover:bg-muted/20 transition-colors">
+                                        <td class="p-4 sm:p-6 font-semibold">Sekretaris</td>
+                                        <td class="p-4 sm:p-6 text-muted-foreground">Anya Azalia Ahaddian</td>
+                                    </tr>
+                                    <tr class="hover:bg-muted/20 transition-colors">
+                                        <td class="p-4 sm:p-6 font-semibold">Bendahara</td>
+                                        <td class="p-4 sm:p-6 text-muted-foreground">Citra Eka Ramadhani</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="section-background border-t border-white/20 mt-24">
+            <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8 grid gap-12 md:grid-cols-3">
+                <div class="space-y-4">
+                    <h3 class="font-bold text-xl mb-4">Kontak</h3>
+                    <div class="space-y-2 text-muted-foreground">
+                        <p>Email: li@unej.ac.id</p>
+                        <p>Telp: 0812-3456-7890</p>
+                        <p>Alamat: Jl. Kampus Tegalboto, Jember</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold text-xl mb-4">Media Sosial</h3>
+                    <div class="flex gap-4 text-muted-foreground">
+                        <a href="#" aria-label="Instagram" class="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 py-1 transition-colors">IG</a>
+                        <a href="#" aria-label="YouTube" class="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 py-1 transition-colors">YT</a>
+                        <a href="#" aria-label="Twitter" class="hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md px-2 py-1 transition-colors">TW</a>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold text-xl mb-4">Tentang</h3>
+                    <p class="text-muted-foreground leading-relaxed">Komunitas riset dan karya ilmiah mahasiswa Universitas Jember.</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10">
+                <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-muted-foreground">© 2025 UKM UNEJ LI</div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
